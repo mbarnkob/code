@@ -1,4 +1,8 @@
-#Risk of death simulations
+#RISK OF DEATH SIMULATIONS
+#2022-04-10
+
+#Load libraries
+library(tidyverse)
 
 #Background death in study period
 risk_of_death <- (16/21888) #placebo group deaths
