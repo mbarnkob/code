@@ -1,10 +1,10 @@
 #Risk of death simulations
 
 #Background death in study period
-risk_of_death <- (11/37083) #placebo group deaths
+risk_of_death <- (16/21888) #placebo group deaths
 risk_of_living <- (1-risk_of_death)
 risk_of_death + risk_of_living #check numbers. Should = 1
-num_in_trial = 21926 #number of participants in vaccine-group
+num_in_trial = 21895 #number of participants in vaccine-group
 num_of_trials = 10000
 
 #Monte Carlo test: chance of two outcomes, death or living - here represented as 1 or 2.
@@ -36,4 +36,4 @@ ggplot(df_sim_pop, aes(x=sim_pop)) +
 calc_lower
 calc_upper
 sort(table(sim_pop))
-sum(sim_pop > 8)/num_of_trials  #count number of trials with more then 8 deaths in current simulation 
+sum(sim_pop < 4)/num_of_trials  #count number of trials with less then 4 deaths in current simulation 
