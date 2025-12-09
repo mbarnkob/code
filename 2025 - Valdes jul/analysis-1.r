@@ -1,4 +1,4 @@
-#Valdes jul kort analse
+#Valdes jul kort analyse #1
 
 ## 0) Pakker
 
@@ -8,7 +8,7 @@ library(ggplot2)
 library(ggrepel)
 
 ## 1) Læs data
-setwd("~/Dropbox/Projekter/2025 - Analyse af Valdes jul kort") # <- MAC
+#setwd("~/Desktop") # <- MAC, sæt dette til placeringen af data-filen
 df <- read.csv2("kort_7dec.csv", 
                 as.is = TRUE, 
                 header = TRUE, 
@@ -31,7 +31,7 @@ df %>%
 
 sum(df$Antal)
 
-# 3) Visualisering af data
+## 3) Visualisering af data
 
 pos <- position_jitter(width = 0.3, seed = 2)
 
