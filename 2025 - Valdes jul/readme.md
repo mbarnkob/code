@@ -9,10 +9,8 @@ Data findes i filen *kort_7dec.csv*.
 
 ## Analyse #1 - sandsynligheden for kort efter antal symboler
 
-*Kode*
+*Kode*: [analysis-1.r](analysis-1.r)
 
-Findes i: [analysis-1.r](analysis-1.r)
-
-*Resultat*
+*Resultat:*
 
 ![Graf over Valde's jul kort](Valde-1.jpg "Sandsynlighed for Valde's jul kort")
