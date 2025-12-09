@@ -13,4 +13,5 @@ Data findes i filen *kort_7dec.csv*.
 
 
 *Resultat*
-![Graf af kort sandsynlighed](Valde-1-Sandsynlighed per kort_symboler.jpeg)
+
+![Graf af kort sandsynlighed](2025 - Valdes jul/Valde-1-Sandsynlighed per kort_symboler.jpeg)
