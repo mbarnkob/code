@@ -11,6 +11,7 @@ Data findes i filen *kort_7dec.csv*.
 
 *Kode*
 
+Findes i: [analysis-1.r](analysis-1.r)
 
 *Resultat*
 
