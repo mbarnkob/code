@@ -28,7 +28,7 @@ Denne analyse bestod af 208 kort indsamlet i og omkring Odense (hovedsagligt fra
 
 Denne analyse består af 652 kort, og identificerer to outlier grupper i kort med 1 eller 2 symboler.
 
-For kort med ét symbol, drejer det sig om: 3, 25, 38.
+For kort med ét symbol, drejer det sig om: 3, 35, 38.
 
 For kort med to symboler, drejer det sig om: 9, 26, 33.
 
@@ -45,4 +45,12 @@ Hvis man fjerner disse kort er sandsynligheden for at for et kort følgende inde
 
 ![Grafer med og uden outlier kort](analysis-2.jpg "Grafer med og uden outlier kort")
 
+Spørgsmålet er om disse outliers kan være opstået tilfældigt (fordi vi kun har indsamlet 652 kort)? Det kan vi undersøge ved en simpel Monte Carlo simulering, hvor vi lader som om vi får 652 kort 10.000 gange... og siger at ét symbol 1 kort er 3,4% sandsynligt at få, og så se hvordan fordeling af disse er.
+
 ![Monte Carlo analyse af sandsynlighed for et 1 symbol kort](analysis-2b.jpg "Monte Carlo analyse af sandsynlighed for et 1 symbol kort")
+
+Til venstre ses vores simulering af 10.000 forskellige samlinger af 652 kort, og hvilken fordeling man ser når der er 3,4% chance for at få et kort.
+
+Vi kan se at i 95% af gange (ud af de 10.000 simuleringer), vil man få et symbol 1 kort (der har 3,4% sandsynlighed) mellem 14 og 32 gange, hvis man samler 652 kort sammen.
+
+For de tre kort der var vores outliers - 3, 35, 38 - har vi fået dem 7, 6 og 5 gange, hvilket er usandsynligt få gange.
