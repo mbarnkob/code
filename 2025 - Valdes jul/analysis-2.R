@@ -9,7 +9,7 @@ library(ggrepel)
 library(patchwork)
 
 ## 1) Læs data
-setwd("~/Desktop") # <- MAC
+setwd("~/Dropbox/Projekter/2025 - Analyse af Valdes jul kort") # <- MAC
 df <- read.csv2("kort_11dec.csv", 
                 as.is = TRUE, 
                 header = TRUE, 
@@ -105,6 +105,53 @@ p2 <- ggplot(df_uden, aes(
 
 p2
 
-#vis begge plots sammen:
+#begge sammen:
 p1 + p2
 
+# 5) Monte-carlo analyse af om kort reelt er outliers
+
+risk_card <- 0.034 #1 symbol gruppe gennemsnit frekvens
+risk_notcard <- (1-risk_card)
+risk_card + risk_notcard #check numbers. Should = 1
+num_in_trial = (sum(df$Antal)) #total antal kort indtil videre 
+num_of_trials = 10000 #antal gange vi simulerer dette
+
+#Monte Carlo test: chance of two outcomes, card or not card - here represented as 1 or 2.
+n <- num_of_trials
+sim_pop <- vector("numeric", n)
+for (i in 1:n)
+{  
+  x <- sample(c(1, 2), size = num_in_trial, replace = TRUE, prob = c(risk_card, risk_notcard))
+  sim_pop[i] <- sum(x == 1) #count number of cards, eg 1's
+}
+
+#Visualize - ggplot for dice examples
+df_sim_pop <- as.data.frame(sim_pop)
+qts <- quantile(sim_pop,probs=c(.025,.975))
+
+p3 <- ggplot(df_sim_pop, aes(x=sim_pop)) +
+  geom_histogram(binwidth = 1, fill="deepskyblue4", col="white") +
+  geom_vline(xintercept=qts[1], linetype="dashed", color = "red") +
+  geom_vline(xintercept=qts[2], linetype="dashed", color = "red") +
+  xlab("Antal ud af 652 tilfældige kort") +
+  ylab("Antal simulationer") +
+  ggtitle(label = paste("Simuleret fordeling af symbol 1 kort in ", count(df_sim_pop), " simulations"),
+          subtitle = paste("Chance for at få kort = ", format(risk_card*100, scientific = FALSE), "%. Antal kort samlet = ", num_in_trial))
+
+p3
+
+#visualiser symbol 1 distribution
+df_1symbol <- df[df$Antal_symboler == 1, ]
+
+p4 <- ggplot(df_1symbol, aes(x=Antal)) +
+  geom_histogram(binwidth = 1, fill="deepskyblue4", col="white") +
+  geom_vline(xintercept=qts[1], linetype="dashed", color = "red") +
+  geom_vline(xintercept=qts[2], linetype="dashed", color = "red") +
+  xlab("Reel fordeling af kort indsamlet") +
+  ylab("") +
+  ggtitle(label = paste("Antal symbol 1 kort indsamlet"),
+          subtitle = paste("Chance for at få kort = ", format(risk_card*100, scientific = FALSE), "%. Antal kort samlet = ", num_in_trial))
+
+p4
+
+p3 + p4
