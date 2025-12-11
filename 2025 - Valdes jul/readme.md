@@ -51,6 +51,6 @@ Spørgsmålet er om disse outliers kan være opstået tilfældigt (fordi vi kun 
 
 Til venstre ses vores simulering af 10.000 forskellige samlinger af 652 kort, og hvilken fordeling man ser når der er 3,4% chance for at få et kort.
 
-Vi kan se at i 95% af gange (ud af de 10.000 simuleringer), vil man få et symbol 1 kort (der har 3,4% sandsynlighed) mellem 14 og 32 gange, hvis man samler 652 kort sammen.
+Vi kan se at i 95% af gange (ud af de 10.000 simuleringer), vil man få et symbol 1 kort (der har 3,4% sandsynlighed) mellem 14 og 32 gange (de røde stiplet linjer), hvis man samler 652 kort sammen.
 
 For de tre kort der var vores outliers - 3, 35, 38 - har vi fået dem 7, 6 og 5 gange, hvilket er usandsynligt få gange.
