@@ -20,20 +20,29 @@ Denne analyse bestod af 208 kort indsamlet i og omkring Odense (hovedsagligt fra
 
 ## Analyse #2 - fund af kort outliers
 
-Denne analyse består af 652 kort, og identificerer to outlier grupper i kort med 1 eller 2 symboler.
-
-For kort med ét symbol, drejer det sig om: 3, 25, 38.
-For kort med to symboler, drejer det sig om: 9, 26, 33.
-
-Hvis man fjerner disse kort er sandsynligheden for at for et kort følgende inden for symbol-kategorierne:
-1 symbol: 3,8%
-2 symboler: 1,1%
-3 symboler: 0,6%
-
 *Data*: [kort_11dec.csv](kort_11dec.csv)
 
 *Kode*: [analysis-2.r](analysis-2.r)
 
-*Resultat:*
+**Beskrivelse**
+
+Denne analyse består af 652 kort, og identificerer to outlier grupper i kort med 1 eller 2 symboler.
+
+For kort med ét symbol, drejer det sig om: 3, 25, 38.
+
+For kort med to symboler, drejer det sig om: 9, 26, 33.
+
+Hvis man fjerner disse kort er sandsynligheden for at for et kort følgende inden for symbol-kategorierne:
+
+1 symbol: 3,8%
+
+2 symboler: 1,1%
+
+3 symboler: 0,6%
+
+
+**Resultat:**
 
 ![Grafer med og uden outlier kort](analysis-2.jpg "Grafer med og uden outlier kort")
+
+![Monte Carlo analyse af sandsynlighed for et 1 symbol kort](analysis-2b.jpg "Monte Carlo analyse af sandsynlighed for et 1 symbol kort")
