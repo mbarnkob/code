@@ -105,3 +105,6 @@ p2 <- ggplot(df_uden, aes(
 
 p2
 
+#vis begge plots sammen:
+p1 + p2
+
