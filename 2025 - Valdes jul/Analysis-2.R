@@ -9,7 +9,7 @@ library(ggrepel)
 library(patchwork)
 
 ## 1) Læs data
-setwd("~/Dropbox/Projekter/2025 - Analyse af Valdes jul kort") # <- MAC
+setwd("~/Desktop") # <- MAC
 df <- read.csv2("kort_11dec.csv", 
                 as.is = TRUE, 
                 header = TRUE, 
